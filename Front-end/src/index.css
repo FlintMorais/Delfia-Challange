@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #153d64;
+  border-radius: 10px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 100px;
+}
+
+.navbar {
+  position: fixed;
+  /* fixa a navbar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* largura total */
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 40px;
+  border-bottom: 1px solid #ddd;
+  /* já separa com uma linha inferior */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* sombra sutil */
+  z-index: 1000;
+  /* garante que fique acima do conteúdo */
+}
+
+.navbar .title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+}
+
+.navbar .user-icon {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .user-icon::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.logo-flux {
+  width: 80px;
+
+}
+
+.logo-flux2 {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.navbar ul {
+  list-style-type: none;
+}
+
+.navbar li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.my-link {
+  transition: 0.5s;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: #1587b8;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+
+.my-link:hover {
+  transition: 0.5s;
+  color: #153d64;
+  background-color: transparent;
+  border: 2px solid #153d64;
+}
+
+.main {
+  text-align: left;
+  margin: 30px;
+}
+
+.text-content {
+  margin-top: 20px;
+}
+
+
+.tittle {
+  font-size: 36px;
+}
+
+/* Cuida do container da página de gerente */
+.container {
+  display: grid;
+  /* Ativa o Grid para o contêiner */
+  grid-template-columns: repeat(2, 1fr);
+  /* Cria 2 colunas de largura igual */
+  grid-template-rows: repeat(2, 1fr);
+  /* Cria 2 linhas de altura igual */
+  justify-content: center;
+}
+
+.cont1 {
+  transition: 0.5s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: transparent;
+  border: 2px solid #153d64;
+  width: 400px;
+  height: 233px;
+  border-radius: 30px;
+  text-decoration: none;
+
+}
+
+.texto {
+  margin: 20px;
+  font-size: 36px;
+  color: #153d64;
+}
+
+.cont1:hover .texto {
+  color: #fff;
+}
+
+.cont1:hover {
+  transition: 0.5s;
+  background-color: #153d64;
+}
+
+/* Cuida do container da pagina do vendedor*/
+.container2 {
+  display: grid;
+  /* Ativa o Grid para o contêiner */
+  grid-template-columns: repeat(1, 1fr);
+  /* Cria 2 colunas de largura igual */
+  grid-template-rows: repeat(2, 1fr);
+  /* Cria 2 linhas de altura igual */
+  justify-content: center;
+}
+
+.cont2 {
+  transition: 0.5s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 0 auto;
+  margin-top: 34px;
+  background-color: transparent;
+  border: 2px solid #153d64;
+  width: 920px;
+  height: 233px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.cont2:hover .texto {
+  color: #fff;
+}
+
+.cont2:hover {
+  transition: 0.5s;
+  background-color: #153d64;
+}
+
+/* Containers superiores da parte do financeiro */
+
+.container-financeiro {
+  display: grid;
+  /* Ativa o Grid para o contêiner */
+  grid-template-columns: repeat(2, 1fr);
+  /* Cria 2 colunas de largura igual */
+  /* Cria 2 linhas de altura igual */
+  justify-content: center;
+}
+
+.cont3 {
+  transition: 0.5s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 0 auto;
+  margin-top: 27px;
+  margin-left: 36px;
+  background-color: transparent;
+  border: 2px solid #153d64;
+  width: 626px;
+  height: 383px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.graph {
+  width: 300px;
+  color: #62c2eb;
+}
+
+.cont4 {
+  transition: 0.5s;
+  margin: 0 auto;
+  margin-left: 36px;
+  margin-top: 18px;
+  background-color: transparent;
+  border: 2px solid #153d64;
+  width: 95%;
+  height: 100%;
+  border-radius: 30px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.cont4 p {
+  font-size: 38px;
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+/* Parte do estoque */
+.cont5 {
+  width: 920px;
+  margin: 0 auto;
+}
+
+.cont6{
+  transition: 0.5s;
+  margin: 0 auto;
+  margin-left: 36px;
+  margin-top: 18px;
+  background-color: transparent;
+  border: 2px solid #153d64;
+  width: 920px;
+  height: 100%;
+  border-radius: 30px;
+  text-decoration: none;
+  margin: 0 auto;  
+}
