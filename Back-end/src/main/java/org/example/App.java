@@ -13,9 +13,8 @@ public class App
         try{
             Connection conexao = Factory.getConnection();
             menu.exibir();
-        } catch (SQLException e){
+        } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-        //Teste do Commit
     }
 }
