@@ -6,8 +6,7 @@ public class Cliente {
     private String telefone;
     private String instagram;
 
-    public Cliente(Integer id_cliente, String nome, String telefone, String instagram){
-        this.id_cliente = id_cliente;
+    public Cliente(String nome, String telefone, String instagram){
         this.nome = nome;
         this.telefone = telefone;
         this.instagram = instagram;

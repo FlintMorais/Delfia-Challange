@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.example.factory.Factory;
+import org.example.model.Cliente;
 
 public class ClienteDAO {
     private Connection conexao;
@@ -40,6 +41,31 @@ public class ClienteDAO {
         } catch (SQLException e) {
             System.err.println("Erro ao listar clientes: " + e.getMessage());
         }
+    }
+
+    public void adicionaCliente(Cliente cliente){
+        if (this.conexao == null){
+            System.err.println("Conexão não estabelecida!");
+            return;
+        }
+
+        String sql = "INSERT INTO t_cliente (nm_cliente, nr_telefone, tx_instagram) VALUES (?, ?, ?)";
+        try(PreparedStatement stmt = conexao.prepareStatement(sql)){
+            stmt.setString(1, cliente.getNome());
+            stmt.setString(2, cliente.getTelefone());
+            stmt.setString(3, cliente.getInstagram());
+
+            int linhasAfetadas = stmt.executeUpdate();
+            if(linhasAfetadas > 0){
+                System.out.println("Cliente inserido com sucesso!!");
+            }
+
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e){
+            System.err.println("Erro ao adicionar Cliente: " + e);
+        }
+
     }
 }
 
