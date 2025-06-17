@@ -12,5 +12,6 @@ public class App
         } catch (SQLException e){
             System.err.println(e.getMessage());
         }
+        //Teste do Commit
     }
 }
