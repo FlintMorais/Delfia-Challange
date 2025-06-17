@@ -10,6 +10,7 @@ public class Menu {
     public void exibir() throws SQLException {
         Scanner scanner = new Scanner(System.in);
         ClienteDAO clienteDAO = new ClienteDAO();
+        EstoqueDAO estoqueDAO = new EstoqueDAO();
 
         System.out.print("""
                 
@@ -28,6 +29,8 @@ public class Menu {
                 
                 1.Exibir Clientes
                 2.Adicionar Cliente
+                3.Exibir Estoque
+                4.Adicionar Produto no estoque
                 """);
 
         System.out.print("--> ");
@@ -52,6 +55,21 @@ public class Menu {
                 Cliente cliente = new Cliente(nome, telefone, instagram);
                 clienteDAO.adicionaCliente(cliente);
                 break;
+            case 3:
+                estoqueDAO.listarProdutos();
+                break;
+            case 4:
+                System.out.print("Digite o nome do produto -> ");
+                String nomeProduto = scanner.nextLine();
+
+                System.out.print("Digite a quantidade do produto -> ");
+                int quantidade = scanner.nextInt();
+
+                System.out.print("Digite o preço do produto -> ");
+                float preco = scanner.nextFloat();
+
+                Estoque estoque = new Estoque(nomeProduto, quantidade, preco);
+                estoqueDAO.adicionarProduto(estoque);
             default:
                 System.out.println("Opção inválida!");
         }
