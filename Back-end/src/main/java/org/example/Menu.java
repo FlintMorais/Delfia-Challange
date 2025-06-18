@@ -11,37 +11,39 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         ClienteDAO clienteDAO = new ClienteDAO();
         EstoqueDAO estoqueDAO = new EstoqueDAO();
+        VendaDAO vendaDAO = new VendaDAO();
 
         System.out.print("""
                 
-                                 ███████                                               
-                             ███████████                                               
-                           ████████████         ████████ ███                           
-                          ██████        ████    ███████  ███                           
-                          ████  ████████████    ███      ███ ███   ██ ████  ███        
-                         ████  ███████████      ████████ ███ ███   ██  ███████         
-                         ████ █████       ██    ███      ███ ███   ██    ████          
-                          ███████   ████████    ███      ███ ███  ███   ██████         
-                          ███████  █████████    ███      ███ ████████ ████ ████        
-                           ████████  ██████                                            
-                            █████████████                                              
-                               ████████ 
+                                 ███████
+                             ███████████
+                           ████████████         ████████ ███
+                          ██████        ████    ███████  ███
+                          ████  ████████████    ███      ███ ███   ██ ████  ███
+                         ████  ███████████      ████████ ███ ███   ██  ███████
+                         ████ █████       ██    ███      ███ ███   ██    ████
+                          ███████   ████████    ███      ███ ███  ███   ██████
+                          ███████  █████████    ███      ███ ████████ ████ ████
+                           ████████  ██████
+                            █████████████
+                               ████████
                 
                 1.Exibir Clientes
                 2.Adicionar Cliente
                 3.Exibir Estoque
                 4.Adicionar Produto no estoque
+                5.Realizar venda
                 """);
 
         System.out.print("--> ");
 
         int opc = scanner.nextInt();
-        scanner.nextLine(); // <-- Aqui está a correção
+        scanner.nextLine();
 
         switch (opc) {
             case 1:
                 clienteDAO.listarClientes();
-                break;
+                exibir();
             case 2:
                 System.out.print("Digite o nome do cliente -> ");
                 String nome = scanner.nextLine();
@@ -54,10 +56,10 @@ public class Menu {
 
                 Cliente cliente = new Cliente(nome, telefone, instagram);
                 clienteDAO.adicionaCliente(cliente);
-                break;
+                exibir();
             case 3:
                 estoqueDAO.listarProdutos();
-                break;
+                exibir();
             case 4:
                 System.out.print("Digite o nome do produto -> ");
                 String nomeProduto = scanner.nextLine();
@@ -70,8 +72,17 @@ public class Menu {
 
                 Estoque estoque = new Estoque(nomeProduto, quantidade, preco);
                 estoqueDAO.adicionarProduto(estoque);
+                exibir();
+            case 5:
+                System.out.print("Digite o nome do produto -> ");
+                String nomeProdutoVenda = scanner.nextLine();
+                System.out.print("Digite a quantidade vendida -> ");
+                int qtVendida = scanner.nextInt();
+                vendaDAO.realizarVenda(nomeProdutoVenda, qtVendida);
+                exibir();
             default:
                 System.out.println("Opção inválida!");
+                break;
         }
     }
 
