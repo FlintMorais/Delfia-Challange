@@ -34,9 +34,26 @@ public class VendaDAO {
                     stmtAtualiza.setInt(2, idProduto);
                     stmtAtualiza.executeUpdate();
 
+                    //Calcular subtotal da venda
+                    //pegar o preço do produto
+                    String sqlPreco = "SELECT vl_preco FROM t_estoque WHERE nm_produto = ?";
+                    PreparedStatement stmtPreco = conexao.prepareStatement(sqlPreco);
+                    stmtPreco.setString(1, nomeProduto);
+                    ResultSet rsPreco = stmtPreco.executeQuery();
+
+                    double subtotal = 0.0;
+                    if(rsPreco.next()){
+                        double preco = rsPreco.getDouble("vl_Preco");
+                        subtotal = preco * quantidadeVendida;
+                    } else {
+                        System.out.println("Não foi possivel obter o preco do produto");
+                    }
+                    rsPreco.close();
+                    stmtPreco.close();
+
                     //Registrar venda
                     System.out.println("Venda realizada com sucesso!!");
-                    System.out.println("Produto: " + nomeProduto + " | Quantidade: " + quantidadeVendida);
+                    System.out.println("Produto: " + nomeProduto + " | Quantidade: " + quantidadeVendida + " | Subtotal: R$" + subtotal);
                 } else {
                     System.out.println("Estoque insuficiente! Estoque atual: " + estoqueAtual);
                 }

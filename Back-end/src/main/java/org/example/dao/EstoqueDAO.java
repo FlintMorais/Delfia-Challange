@@ -36,7 +36,6 @@ public class EstoqueDAO {
 
             rs.close();
             stmt.close();
-            conexao.close();
         } catch (SQLException e){
             System.err.println("Erro ao listar produtos" + e.getMessage());
         }

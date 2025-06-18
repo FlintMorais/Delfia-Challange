@@ -12,7 +12,10 @@ public class Menu {
         ClienteDAO clienteDAO = new ClienteDAO();
         EstoqueDAO estoqueDAO = new EstoqueDAO();
         VendaDAO vendaDAO = new VendaDAO();
-
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
         System.out.print("""
                 
                                  ███████
