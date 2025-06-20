@@ -1,11 +1,73 @@
-export default function Estoque() {
+import React, { useState } from 'react';
+
+export default function Clintes() {
+    const [formData, setFormData] = useState({
+    cep: '',
+    cidade: '',
+    estado: ''
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const buscarCep = () => {
+    if (formData.cep.length >= 8) {
+      fetch(`https://viacep.com.br/ws/${formData.cep}/json/`)
+        .then(response => response.json())
+        .then(data => {
+          if (!data.erro) {
+            setFormData((prev) => ({
+              ...prev,
+              cidade: data.localidade,
+              estado: data.uf
+            }));
+          } else {
+            alert('CEP não encontrado');
+          }
+        })
+        .catch(() => {
+          alert('Erro ao buscar o CEP');
+        });
+    }
+  };
     return (
         <>
             <div className="main">
                 <div className="cont5 d-flex justify-content-between align-items-center mb-3">
                     <h2>Clientes</h2>
-                    <button className="btn btn-outline-success">+ Adicionar</button>
+                    <button className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Adicionar</button>
                 </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered ">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <label for="nome" class="form-label">Nome</label>
+                              <input type="text" class="form-control mb-3" id="nome" />
+                              <label for="Telefone" class="form-label">Telefone</label>
+                              <input type="number" class="form-control mb-3" id="Telefone"/>
+                              <label for="Instagram" class="form-label">Instagram</label>
+                              <input type="text" class="form-control mb-3" id="Instagram" />
+                              <label for="cep" class="form-label">CEP</label>
+                              <input type="text" class="form-control mb-3" id="cep"  onChange={handleChange} onBlur={buscarCep}/>
+                              <label for="cidade" class="form-label">Cidade</label>
+                              <input class="form-control mb-3" type="text" id="cidade" value={formData.cidade}/>
+                              <label for="estado" class="form-label">Estado</label>
+                              <input class="form-control mb-3" type="text" id="estado" value={formData.estado}/>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Adicionar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 <div className="cont6">
                     <table className="table table-striped mx-auto my-4" style={{ width: '99%' }}>
                         <thead>
