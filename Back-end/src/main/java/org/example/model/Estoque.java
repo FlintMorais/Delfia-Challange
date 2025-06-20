@@ -6,15 +6,20 @@ public class Estoque {
     private Integer quantidade;
     private float preco;
 
-    public Estoque(String nome, Integer quantidade, float preco){
+    public Estoque(Integer id_produto, String nome, Integer quantidade, float preco) {
+        this.id_produto = id_produto;
         this.nome = nome;
         this.quantidade = quantidade;
         this.preco = preco;
     }
 
-    //getters e setters
+    public Estoque(String nome, Integer quantidade, float preco) {
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.preco = preco;
+    }
 
-
+    // Getters e Setters
     public Integer getId_produto() {
         return id_produto;
     }
@@ -45,5 +50,13 @@ public class Estoque {
 
     public void setPreco(float preco) {
         this.preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + id_produto +
+                ", Produto: " + nome +
+                ", Quantidade: " + quantidade +
+                ", Preço: R$ " + String.format("%.2f", preco);
     }
 }
