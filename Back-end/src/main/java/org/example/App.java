@@ -1,4 +1,5 @@
 package org.example;
+import java.io.IOException;
 import java.sql.*;
 import org.example.factory.Factory;
 import org.example.dao.*;
@@ -15,6 +16,8 @@ public class App
             menu.exibir();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -1,14 +1,17 @@
 package org.example;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
+import org.example.Exportar;
 
 import org.example.dao.*;
 import org.example.model.*;
 
 public class Menu {
-    public void exibir() throws SQLException {
+    public void exibir() throws SQLException, IOException {
         Scanner scanner = new Scanner(System.in);
+        Exportar exportar = new Exportar();
         ClienteDAO clienteDAO = new ClienteDAO();
         EstoqueDAO estoqueDAO = new EstoqueDAO();
         VendaDAO vendaDAO = new VendaDAO();
@@ -36,6 +39,8 @@ public class Menu {
                 3.Exibir Estoque
                 4.Adicionar Produto no estoque
                 5.Realizar venda
+                6.Exportar Produtos
+                7.Exportar Clientes.
                 """);
 
         System.out.print("--> ");
@@ -47,6 +52,7 @@ public class Menu {
             case 1:
                 clienteDAO.listarClientes();
                 exibir();
+                break;
             case 2:
                 System.out.print("Digite o nome do cliente -> ");
                 String nome = scanner.nextLine();
@@ -60,9 +66,11 @@ public class Menu {
                 Cliente cliente = new Cliente(nome, telefone, instagram);
                 clienteDAO.adicionaCliente(cliente);
                 exibir();
+                break;
             case 3:
                 estoqueDAO.listarProdutos();
                 exibir();
+                break;
             case 4:
                 System.out.print("Digite o nome do produto -> ");
                 String nomeProduto = scanner.nextLine();
@@ -76,6 +84,7 @@ public class Menu {
                 Estoque estoque = new Estoque(nomeProduto, quantidade, preco);
                 estoqueDAO.adicionarProduto(estoque);
                 exibir();
+                break;
             case 5:
                 System.out.print("Digite o nome do produto -> ");
                 String nomeProdutoVenda = scanner.nextLine();
@@ -83,6 +92,15 @@ public class Menu {
                 int qtVendida = scanner.nextInt();
                 vendaDAO.realizarVenda(nomeProdutoVenda, qtVendida);
                 exibir();
+                break;
+            case 6:
+                exportar.exportarEstoque();
+                exibir();
+                break;
+            case 7:
+                exportar.exportarClientes();
+                exibir();
+                break;
             default:
                 System.out.println("Opção inválida!");
                 break;

@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.example.factory.Factory;
 import org.example.model.Cliente;
@@ -66,6 +68,29 @@ public class ClienteDAO {
             System.err.println("Erro ao adicionar Cliente: " + e);
         }
 
+    }
+    public List<Cliente> getTodosClientes(){
+        List<Cliente> lista = new ArrayList<>();
+        String sql = "SELECT * FROM t_cliente";
+
+        try (PreparedStatement stmt = conexao.prepareStatement(sql);
+        ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                int id = rs.getInt("id_cliente");
+                String nome = rs.getString("nm_cliente");
+                String telefone = rs.getString("nr_telefone");
+                String instagram = rs.getString("tx_instagram");
+
+                Cliente cliente = new Cliente (id, nome, telefone, instagram);
+                lista.add(cliente);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Erro ao obter produtos: " + e.getMessage());
+        }
+
+        return lista;
     }
 }
 
