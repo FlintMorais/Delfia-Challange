@@ -7,7 +7,7 @@ export default function Estoque() {
                     <button className="btn btn-outline-success">+ Adicionar</button>
                 </div>
                 <div className="cont6">
-                    <table className="table table-striped mx-auto my-4" style={{ width: '99%' }}>
+                    <table className="table table-responsive table-striped mx-auto my-4" style={{ width: '99%' }}>
                         <thead>
                             <tr>
                                 <th scope="col">Nome</th>

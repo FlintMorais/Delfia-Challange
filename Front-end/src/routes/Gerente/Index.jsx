@@ -5,8 +5,7 @@ export default function Gerente() {
     return (
         <>
             <div className="main">
-                <h2 className="tittle">Área do Gerente</h2>
-                <p className="text-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem soluta corporis, perspiciatis nemo odio dignissimos saepe tempora doloribus vel in rem eligendi? Obcaecati blanditiis, quibusdam commodi, iusto soluta, hic nihil esse eius accusantium corporis aliquam.</p>
+                <h2 className="tittle">Gerente</h2>
                 < div className="container">
 
                     <Link to="/financeiro" className="cont1">
