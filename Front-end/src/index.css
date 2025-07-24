@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,7 +16,7 @@
 body {
   font-family: Arial, sans-serif;
   padding-top: 100px;
-}
+} */
 
 .navbar {
   position: fixed;
@@ -37,13 +37,13 @@ body {
   /* garante que fique acima do conteúdo */
 }
 
-.navbar .title {
+/* .navbar .title {
   font-size: 20px;
   font-weight: 500;
   color: #000;
-}
+} */
 
-.navbar .user-icon {
+/* .navbar .user-icon {
   width: 32px;
   height: 32px;
   border: 2px solid #000;
@@ -51,15 +51,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
-.navbar .user-icon::before {
+/* .navbar .user-icon::before {
   content: "";
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background-color: #000;
-}
+} */
 
 .logo-flux {
   width: 80px;
@@ -71,16 +71,16 @@ body {
   margin: 0 auto;
 }
 
-.navbar ul {
+/* .navbar ul {
   list-style-type: none;
 }
 
 .navbar li {
   display: inline-block;
   margin-left: 30px;
-}
+}  */
 
-.my-link {
+/* .my-link {
   transition: 0.5s;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -110,7 +110,7 @@ body {
 
 .tittle {
   font-size: 36px;
-}
+} */
 
 /* Cuida do container da página de gerente */
 .container {
@@ -154,7 +154,7 @@ body {
   background-color: #153d64;
 }
 
-/* Cuida do container da pagina do vendedor*/
+Cuida do container da pagina do vendedor
 .container2 {
   display: grid;
   /* Ativa o Grid para o contêiner */
