@@ -11,12 +11,12 @@
 ::-webkit-scrollbar-thumb{
   background-color: #153d64;
   border-radius: 10px;
-}
+}*/
 
 body {
   font-family: Arial, sans-serif;
   padding-top: 100px;
-} */
+} 
 
 .navbar {
   position: fixed;
