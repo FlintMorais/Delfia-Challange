@@ -40,7 +40,8 @@ public class Menu {
                 4.Adicionar Produto no estoque
                 5.Realizar venda
                 6.Exportar Produtos
-                7.Exportar Clientes.
+                7.Exportar Clientes
+                8.Interagir com IA.
                 """);
 
         System.out.print("--> ");
@@ -103,6 +104,8 @@ public class Menu {
                 break;
             default:
                 System.out.println("Opção inválida!");
+                break;
+            case 8:
                 break;
         }
     }
