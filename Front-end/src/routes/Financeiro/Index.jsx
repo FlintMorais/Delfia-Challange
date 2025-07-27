@@ -4,7 +4,7 @@ import { GraficoPizza } from "../../components/GraficoPizza";
 export default function Financeiro() {
     return (
         <>
-            <div className="main pt-5 mt-5">
+            <div className="main">
                 <h2 className="tittle">Financeiro</h2>
                 <div className="container-financeiro">
                     <div className="cont3">

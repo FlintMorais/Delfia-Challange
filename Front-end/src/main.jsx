@@ -9,6 +9,8 @@ import Vendedor from './routes/Vendedor/Index.jsx'
 import Estoque from './routes/Estoque/Index.jsx'
 import Clientes from './routes/Clientes/Index.jsx'
 import {createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Login from './components/Login.jsx'
+import Registrar from './components/Registrar.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,7 +22,9 @@ const router = createBrowserRouter([
       {path: "/pagina-em-construcao", element: <Construcao />},
       {path: "/financeiro", element: <Financeiro />},
       {path: "/estoque", element: <Estoque />},
-      {path: "/clientes", element: <Clientes />}
+      {path: "/clientes", element: <Clientes />},
+      {path: "/login", element: <Login />},
+      {path: "/registrar", element: <Registrar />}
     ]
   }
 ])

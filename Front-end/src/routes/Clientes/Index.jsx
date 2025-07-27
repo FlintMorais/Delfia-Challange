@@ -1,40 +1,11 @@
 import React, { useState } from 'react';
+import Menu from '../../components/Menu';
 
 export default function Clintes() {
-    const [formData, setFormData] = useState({
-    cep: '',
-    cidade: '',
-    estado: ''
-  });
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-  };
-
-  const buscarCep = () => {
-    if (formData.cep.length >= 8) {
-      fetch(`https://viacep.com.br/ws/${formData.cep}/json/`)
-        .then(response => response.json())
-        .then(data => {
-          if (!data.erro) {
-            setFormData((prev) => ({
-              ...prev,
-              cidade: data.localidade,
-              estado: data.uf
-            }));
-          } else {
-            alert('CEP não encontrado');
-          }
-        })
-        .catch(() => {
-          alert('Erro ao buscar o CEP');
-        });
-    }
-  };
     return (
         <>
-            <div className="main">
+            <Menu/>
+            <div className="main" style={{paddingTop: 100}}>
                 <div className="cont5 d-flex justify-content-between align-items-center mb-3">
                     <h2>Clientes</h2>
                     <button className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Adicionar</button>
@@ -53,12 +24,6 @@ export default function Clintes() {
                               <input type="number" class="form-control mb-3" id="Telefone"/>
                               <label for="Instagram" class="form-label">Instagram</label>
                               <input type="text" class="form-control mb-3" id="Instagram" />
-                              <label for="cep" class="form-label">CEP</label>
-                              <input type="text" class="form-control mb-3" id="cep"  onChange={handleChange} onBlur={buscarCep}/>
-                              <label for="cidade" class="form-label">Cidade</label>
-                              <input class="form-control mb-3" type="text" id="cidade" value={formData.cidade}/>
-                              <label for="estado" class="form-label">Estado</label>
-                              <input class="form-control mb-3" type="text" id="estado" value={formData.estado}/>
                             </form>
                           </div>
                           <div class="modal-footer">
@@ -78,51 +43,6 @@ export default function Clintes() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">Lorem, ipsum.</th>
-                                <td>(99)999999999</td>
-                                <td>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-pencil"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Lorem, ipsum.</th>
-                                <td>(99)999999999</td>
-                                <td>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-pencil"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Lorem, ipsum.</th>
-                                <td>(99)999999999</td>
-                                <td>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-pencil"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Lorem, ipsum.</th>
-                                <td>(99)999999999</td>
-                                <td>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-pencil"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Lorem, ipsum.</th>
-                                <td>(99)999999999</td>
-                                <td>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-pencil"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-                                </td>
-                            </tr>
                             <tr>
                                 <th scope="row">Lorem, ipsum.</th>
                                 <td>(99)999999999</td>

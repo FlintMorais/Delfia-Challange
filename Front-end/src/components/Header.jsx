@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "./img/flux-logo-sf.png";
 import perfil from "./img/user-1.jpg";
-export default function Menu() {
+export default function Header() {
   return (
     <>
 <header className="app-header pb-4">
@@ -72,17 +72,6 @@ export default function Menu() {
                 className="rounded-circle"
               />
             </a>
-            <div
-              className="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
-              aria-labelledby="drop2"
-            >
-              <div className="message-body">
-                <a href="/" className="d-flex align-items-center gap-2 dropdown-item">
-                  <p className="mb-0">Minha conta</p>
-                </a>
-                <Link to="/login" className="btn btn-danger mx-3 mt-2 d-block">Sair</Link>
-              </div>
-            </div>
           </li>
         </ul>
       </div>
