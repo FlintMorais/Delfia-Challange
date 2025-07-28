@@ -107,6 +107,7 @@ public class Menu {
                 System.out.print("Digite a sua pergunta: ");
                 String mensagem = scanner.nextLine();
                 GeminiChat geminiChat = new GeminiChat(mensagem);
+                exibir();
                 break;
             default:
                 System.out.println("Opção inválida!");
