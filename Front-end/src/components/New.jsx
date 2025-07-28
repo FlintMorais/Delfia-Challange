@@ -1,4 +1,4 @@
-import logo from "../../components/img/flux-logo-sf.png"
+import logo from '../components/img/flux-logo.png'
 export default function Construcao() {
 
     return (
