@@ -1,22 +1,20 @@
 package org.example;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+
 import com.google.gson.Gson;
+
 import java.util.List;
-import java.util.Scanner;
 
 public class GeminiChat {
     private static final String ChaveAPI = "AIzaSyDXVhLSueAfTlPuivS4jsZHh2I40NpuCOc";
     private static final String ENDPOINT = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=" + ChaveAPI;
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Pergunta: ");
-        String mensagem = scanner.nextLine();
-
+    public GeminiChat(String mensagem){
         try {
             String resposta = enviar(mensagem);
             System.out.println("Resposta: " + extrairTextoComGson(resposta));
@@ -27,16 +25,16 @@ public class GeminiChat {
 
     private static String enviar(String mensagem) throws Exception {
         String jsonBody = """
-        {
-          "contents": [
-            {
-              "parts": [
-                { "text": "%s" }
-              ]
-            }
-          ]
-        }
-        """.formatted(mensagem);
+                {
+                  "contents": [
+                    {
+                      "parts": [
+                        { "text": "%s" }
+                      ]
+                    }
+                  ]
+                }
+                """.formatted(mensagem);
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
