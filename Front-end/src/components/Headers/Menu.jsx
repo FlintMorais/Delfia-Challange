@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import logo from "./img/flux-logo-sf.png";
-import perfil from "./img/user-1.jpg";
-export default function Header() {
+import logo from '../img/flux-logo.png';
+import perfil from "../img/user-1.jpg";
+export default function Menu() {
   return (
     <>
-<header className="app-header pb-4">
+<header className="app-header border-bottom">
   <nav className="navbar navbar-expand-lg navbar-light">
     <a className="navbar-brand" href="#">
       <Link to="/">
-        <img src={logo} alt="flux-logo" className="logo-flux tittle" />
+        <img src={logo} alt="flux-logo" width={80} className="logo-flux tittle" />
       </Link>
     </a>
 
@@ -72,6 +72,18 @@ export default function Header() {
                 className="rounded-circle"
               />
             </a>
+            <div
+              className="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+              aria-labelledby="drop2"
+            >
+              <div className="message-body">
+                <p className="d-flex align-items-center gap-2 dropdown-item">Nome da Conta</p>
+                {/* <a href="/" className="d-flex align-items-center gap-2 dropdown-item">
+                  <p className="mb-0">Minha conta</p>
+                </a> */}
+                <Link to="/login" className="btn btn-danger mx-3 mt-2 d-block">Sair</Link>
+              </div>
+            </div>
           </li>
         </ul>
       </div>

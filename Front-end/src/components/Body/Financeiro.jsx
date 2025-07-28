@@ -1,5 +1,5 @@
-import { BarChart } from '../../components/BarChart';
-import { GraficoPizza } from "../../components/GraficoPizza";
+import { BarChart } from '../BarChart';
+import { GraficoPizza } from "../GraficoPizza";
 
 export default function Financeiro() {
     return (
