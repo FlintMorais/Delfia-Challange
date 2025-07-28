@@ -7,6 +7,7 @@ import org.example.Exportar;
 
 import org.example.dao.*;
 import org.example.model.*;
+import org.example.GeminiChat;
 
 public class Menu {
     public void exibir() throws SQLException, IOException {
@@ -40,7 +41,8 @@ public class Menu {
                 4.Adicionar Produto no estoque
                 5.Realizar venda
                 6.Exportar Produtos
-                7.Exportar Clientes.
+                7.Exportar Clientes
+                8.Interagir com IA.
                 """);
 
         System.out.print("--> ");
@@ -99,6 +101,12 @@ public class Menu {
                 break;
             case 7:
                 exportar.exportarClientes();
+                exibir();
+                break;
+            case 8:
+                System.out.print("Digite a sua pergunta: ");
+                String mensagem = scanner.nextLine();
+                GeminiChat geminiChat = new GeminiChat(mensagem);
                 exibir();
                 break;
             default:
