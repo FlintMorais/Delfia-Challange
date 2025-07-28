@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import Menu from '../../components/Menu';
+import Menu from './Menu';
 
 export default function Clintes() {
     return (
         <>
-            <Menu/>
-            <div className="main" style={{paddingTop: 100}}>
+            <div className="main">
                 <div className="cont5 d-flex justify-content-between align-items-center mb-3">
                     <h2>Clientes</h2>
                     <button className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Adicionar</button>
