@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <Gerente /> },
+      { path: "/", element: <PGerente /> },
       { path: "/vendedor", element: <PVendedor /> },
       { path: "/financeiro", element: <PFinanceiro /> },
       { path: "/estoque", element: <PEstoque /> },
@@ -29,6 +29,15 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+
+function PGerente() {
+  return (
+    <>
+      <Menu />
+      <Gerente></Gerente>
+    </>
+  );
+}
 
 function PClientes() {
   return (
