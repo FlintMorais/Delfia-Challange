@@ -3,7 +3,6 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import Construcao from '../components/New';
 import Financeiro from '../components/Body/Financeiro';
-import Gerente from '../components/Body/Gerentes';
 import Vendedor from '../components/Body/Vendedor';
 import Login from '../components/Pages/Login';
 import Registrar from '../components/Pages/Registrar';
@@ -11,13 +10,15 @@ import Menu from '../components/Headers/Menu';
 import Clientes from '../components/Body/Clientes';
 import Estoque from '../components/Body/Estoque';
 import Header from '../components/Headers/Header';
+import Home from '../components/Body/Home';
+import Landing from '../components/Headers/Landing';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <PGerente /> },
+      { path: "/", element: <PHome /> },
       { path: "/vendedor", element: <PVendedor /> },
       { path: "/financeiro", element: <PFinanceiro /> },
       { path: "/estoque", element: <PEstoque /> },
@@ -30,11 +31,11 @@ const router = createBrowserRouter([
 
 export default router;
 
-function PGerente() {
+function PHome() {
   return (
     <>
-      <Menu />
-      <Gerente></Gerente>
+      <Landing />
+      <Home />
     </>
   );
 }
@@ -85,7 +86,7 @@ function PCadastro() {
 function PFinanceiro() {
     return (
     <>
-        <Menu></Menu>
+        <Menu/>
         <Financeiro/>
     </>
     );
