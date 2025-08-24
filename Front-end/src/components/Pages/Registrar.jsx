@@ -29,7 +29,7 @@ export default function Registrar(){
                                 <label for="exampleInputPassword1" class="form-label">Senha</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1"></input>
                             </div>
-                            <a href="./index.html" class="btn btn-primary w-100 py-8 fs-5 mb-4 rounded-2">Cadastrar-se</a>
+                            <Link to="/financeiro" className="btn btn-primary w-100 py-8 fs-5 mb-4 rounded-2">Cadastrar-se</Link>
                             <div class="d-flex align-items-center justify-content-center">
                                 <p class="mb-0 ">Já tem uma conta?</p>
                                 <Link to="/login" className="text-primary  ms-2">Fazer Login</Link>

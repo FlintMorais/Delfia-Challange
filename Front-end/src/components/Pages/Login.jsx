@@ -28,7 +28,7 @@ export default function Login(){
                   <div class="d-flex align-items-center justify-content-between mb-4">
                     <a class="text-primary" href="./index.html">Esqueceu sua senha?</a>
                   </div>
-                  <a href="./index.html" class="btn btn-primary w-100 py-8 fs-5 mb-4 rounded-2">Fazer login</a>
+                  <Link to="/financeiro" className="btn btn-primary w-100 py-8 fs-5 mb-4 rounded-2">Fazer login</Link>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="mb-0">Novo no Flux?</p>
                     <Link to="/registrar" className="text-primary  ms-2">Criar uma conta</Link>

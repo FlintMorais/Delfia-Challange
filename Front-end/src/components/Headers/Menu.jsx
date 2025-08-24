@@ -6,12 +6,10 @@ export default function Menu() {
     <>
 <header className="app-header border-bottom">
   <nav className="navbar navbar-expand-lg navbar-light">
-    <a className="navbar-brand" href="#">
-      <Link to="/">
-        <img src={logo} alt="flux-logo" width={80} className="logo-flux tittle" />
-      </Link>
-    </a>
-
+    <Link to="/financeiro">
+            <img src={logo} className="navbar-brand" alt="flux-logo" width={80} />
+    </Link>
+  
     <button
       className="navbar-toggler"
       type="button"
