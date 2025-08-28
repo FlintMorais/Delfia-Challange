@@ -1,5 +1,6 @@
 import { BarChart } from '../BarChart';
 import { GraficoPizza } from "../GraficoPizza";
+import Vendas from "../Tables/Vendas";
 
 export default function Financeiro() {
     return (
@@ -85,51 +86,23 @@ export default function Financeiro() {
                         </div>
                         </div>
                     </div>
-                </div>
-                <div className="container-financeiro">
-                    <div className="cont3">
+                    <div className='row m-3 justify-content-center'>
+                        <div className="col-12 p-0">
+                        <div className="row row-cols-1">
+                        <div className="col">
+                                <div className="shadow card text-bg-light">
+                                        <div className="card-body">
+                                            <h5 className="card-title">Vendas</h5>
+                                            <hr />
+                                            <p className="card-text"><Vendas /></p>
+                                        </div>
+                                </div>
+                        </div>
+                        </div>
+                        </div>
                     </div>
-                    <div className="cont3">
-                        
-                    </div>
                 </div>
-                <div className="cont4">
-                    <p>Vendas mensais</p>
-                    <table className="table table-striped mx-auto my-4" style={{ width: '99%' }}>
-                        <thead>
-                            <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Telefone</th>
-                                <th scope="col">Compras</th>
-                                <th scope="col">Produtos</th>
-                                <th scope="col">Preferido</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Lorem, ipsum.</th>
-                                <td>(99)999999999</td>
-                                <td>9</td>
-                                <td>9</td>
-                                <td>Lorem.</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Lorem, ipsum.</th>
-                                <td>(99)999999999</td>
-                                <td>9</td>
-                                <td>9</td>
-                                <td>Lorem.</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Lorem, ipsum.</th>
-                                <td>(99)999999999</td>
-                                <td>9</td>
-                                <td>9</td>
-                                <td>Lorem.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                
             </div>
         </>
     )
