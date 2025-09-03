@@ -6,7 +6,7 @@ import { Toast } from "bootstrap";
 DataTable.use(DT);
 DataTable.use(RowReorder);
 
-export default function Vendas() {
+export default function VendasVendedor() {
   const showToast = (id) => {
       const el = document.getElementById(id);
       if (!el) return;
@@ -35,7 +35,6 @@ export default function Vendas() {
       >
         <thead>
           <tr>
-            <th>Vendedor</th>
             <th>Cliente</th>
             <th>Produtos</th>
             <th>Valor</th>
@@ -45,7 +44,6 @@ export default function Vendas() {
         </thead>
         <tbody>
           <tr>
-            <th>Julio</th>
             <th>Pedro</th>
             <td>3</td>
             <td>R$ 20,00</td>
@@ -56,7 +54,7 @@ export default function Vendas() {
                     type="button"
                     className="btn btn-primary flex-fill py-2"
                     data-bs-toggle="modal"
-                    data-bs-target="#modaledit"
+                    data-bs-target="#editvenda"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +75,7 @@ export default function Vendas() {
                     type="button"
                     className="btn btn-danger flex-fill py-2"
                     data-bs-toggle="modal"
-                    data-bs-target="#modalremove"
+                    data-bs-target="#removevenda"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -93,9 +91,8 @@ export default function Vendas() {
               </td>
           </tr>
           <tr>
-            <th>Julio</th>
             <th>Mateus</th>
-            <td>6</td>
+            <td>5</td>
             <td>R$ 20,00</td>
             <td>20/01/9999</td>
             <td className="p-2">
@@ -104,7 +101,7 @@ export default function Vendas() {
                     type="button"
                     className="btn btn-primary flex-fill py-2"
                     data-bs-toggle="modal"
-                    data-bs-target="#modaledit"
+                    data-bs-target="#editvenda"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +122,7 @@ export default function Vendas() {
                     type="button"
                     className="btn btn-danger flex-fill py-2"
                     data-bs-toggle="modal"
-                    data-bs-target="#modalremove"
+                    data-bs-target="#removevenda"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -141,9 +138,8 @@ export default function Vendas() {
               </td>
           </tr>
           <tr>
-            <th>Julio</th>
             <th>Rafael</th>
-            <td>10</td>
+            <td>1</td>
             <td>R$ 20,00</td>
             <td>20/01/9999</td>
             <td className="p-2">
@@ -152,7 +148,7 @@ export default function Vendas() {
                     type="button"
                     className="btn btn-primary flex-fill py-2"
                     data-bs-toggle="modal"
-                    data-bs-target="#modaledit"
+                    data-bs-target="#editvenda"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +169,7 @@ export default function Vendas() {
                     type="button"
                     className="btn btn-danger flex-fill py-2"
                     data-bs-toggle="modal"
-                    data-bs-target="#modalremove"
+                    data-bs-target="#removevenda"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +185,6 @@ export default function Vendas() {
               </td>
           </tr>
           <tr>
-            <th>Cesar</th>
             <th>Lucas</th>
             <td>1</td>
             <td>R$ 20,00</td>
@@ -200,7 +195,7 @@ export default function Vendas() {
                     type="button"
                     className="btn btn-primary flex-fill py-2"
                     data-bs-toggle="modal"
-                    data-bs-target="#modaledit"
+                    data-bs-target="#editvenda"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -221,7 +216,7 @@ export default function Vendas() {
                     type="button"
                     className="btn btn-danger flex-fill py-2"
                     data-bs-toggle="modal"
-                    data-bs-target="#modalremove"
+                    data-bs-target="#removevenda"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +237,7 @@ export default function Vendas() {
     
       <div
         className="modal fade"
-        id="modalremove"
+        id="removevenda"
         tabIndex={-1}
         aria-labelledby="modalremoveLabel"
         aria-hidden="true"
@@ -267,7 +262,7 @@ export default function Vendas() {
                 Cancelar
               </button>
 
-              {/* aqui chama o toast "tremovevenda" */}
+              {/* aqui chama o toast */}
               <button
                 type="button"
                 className="btn btn-danger"
@@ -284,7 +279,7 @@ export default function Vendas() {
       {/* Modal editar */}
       <div
         className="modal fade"
-        id="modaledit"
+        id="editvenda"
         tabIndex={-1}
         aria-labelledby="modaleditLabel"
         aria-hidden="true"
@@ -343,7 +338,7 @@ export default function Vendas() {
                 type="button"
                 className="btn btn-primary"
                 data-bs-dismiss="modal"
-                onClick={() => showToast("edit")}
+                onClick={() => showToast("teditvenda")}
               >
                 Editar
               </button>
@@ -373,7 +368,7 @@ export default function Vendas() {
         </div>
 
         <div
-          id="edit"
+          id="teditvenda"
           className="toast text-bg-primary mt-2"
           role="alert"
           aria-live="assertive"
